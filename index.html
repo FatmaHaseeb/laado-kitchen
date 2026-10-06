@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>LAADO CLOUD Kitchen | Pure Vegetarian Food</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{
+ colors:{spin:'#12301F',saffron:'#FFA41B',beet:'#C2185B',milk:'#FFFBF2',leaf:'#1E7B3A'},
+ fontFamily:{display:['Fraunces','serif'],sans:['Outfit','sans-serif']}}}}
+</script>
+<style>
+ :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+ body{background:#FFFBF2}
+ @keyframes spin{to{transform:rotate(360deg)}}
+ @keyframes slide{to{transform:translateX(-50%)}}
+ .badge{animation:spin 22s linear infinite}
+ .belt{animation:slide 28s linear infinite}
+ @media (prefers-reduced-motion:reduce){.badge,.belt{animation:none}}
+ .vm{display:inline-grid;place-items:center;width:1.05rem;height:1.05rem;border:2px solid #1E7B3A;border-radius:3px;flex:none}
+ .vm::after{content:"";width:.5rem;height:.5rem;border-radius:50%;background:#1E7B3A}
+</style>
+</head>
+<body class="font-sans text-spin antialiased">
+
+<header class="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-5 text-milk md:px-12" style="padding-top:calc(1.25rem + env(safe-area-inset-top,0px))">
+  <a href="#home" class="font-display text-2xl font-black">LAADO CLOUD KITCHEN</a>
+  <nav class="flex items-center gap-6 text-sm font-medium">
+    <a href="#menu" class="hidden sm:block">Menu</a>
+    <a href="#story" class="hidden sm:block">Our story</a>
+    <a href="#contact" class="rounded-full bg-saffron px-5 py-2 font-semibold text-spin">Contact us</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home" class="relative overflow-hidden bg-spin px-6 pb-24 pt-36 text-milk md:px-12 md:pt-44">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.4fr_1fr]">
+    <div>
+      <p class="mb-5 inline-flex items-center gap-2 rounded-full bg-milk px-4 py-1.5 text-sm font-semibold text-spin"><i class="vm"></i> Pure vegetarian kitchen</p>
+      <h1 class="font-display text-6xl font-black leading-[0.95] sm:text-7xl md:text-8xl">Sweet, spicy,<br>always <span class="text-saffron">veg.</span></h1>
+      <p class="mt-6 max-w-md text-lg text-milk/80">Home-style thalis, rich paneer and hand-rolled besan laado, cooked fresh every day.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#contact" class="rounded-full bg-saffron px-7 py-3 font-semibold text-spin transition hover:-translate-y-0.5">Order or enquire</a>
+        <a href="#menu" class="rounded-full border-2 border-milk/40 px-7 py-3 font-semibold transition hover:border-milk">See the menu</a>
+      </div>
+    </div>
+    <!-- Memorable element: spinning badge around a laado -->
+    <div class="relative mx-auto aspect-square w-64 md:w-80" aria-hidden="true">
+      <svg viewBox="0 0 200 200" class="badge absolute inset-0 h-full w-full">
+        <defs><path id="c" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+        <text font-size="15" font-weight="600" letter-spacing="3.2" fill="#FFA41B"><textPath href="#c">PURE VEG • FRESH DAILY • HOME STYLE • LAADO KITCHEN •</textPath></text>
+      </svg>
+      <div class="absolute inset-[22%] rounded-full shadow-[inset_-14px_-16px_30px_rgba(110,60,0,.45),0_20px_50px_rgba(0,0,0,.35)]" style="background:radial-gradient(circle at 35% 30%,#FFE08A,#FFA41B 55%,#C77700)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISH BELT -->
+<div class="overflow-hidden bg-saffron py-3 text-spin" aria-hidden="true">
+  <div class="belt flex w-max gap-10 whitespace-nowrap font-display text-xl font-black">
+    <span>Samosa Chaat</span><span>✦</span><span>Paneer Masala</span><span>✦</span><span>Chole Bhature</span><span>✦</span><span>Aloo Paratha</span><span>✦</span><span>Besan Laado</span><span>✦</span><span>Veg Thali</span><span>✦</span>
+    <span>Samosa Chaat</span><span>✦</span><span>Paneer Masala</span><span>✦</span><span>Chole Bhature</span><span>✦</span><span>Aloo Paratha</span><span>✦</span><span>Besan Laado</span><span>✦</span><span>Veg Thali</span><span>✦</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section id="menu" class="mx-auto max-w-6xl px-6 py-20 md:px-12">
+  <h2 class="font-display text-5xl font-black md:text-6xl">What's cooking</h2>
+  <p class="mt-3 max-w-md text-spin/70">Everything is vegetarian. Jain and no onion-garlic versions on request.</p>
+  <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <article class="rounded-3xl bg-white overflow-hidden shadow-sm ring-1 ring-spin/10">
+<?php if (is_file(__DIR__.'images/samosa-chaat.jpg')): ?><img src="images/samosa-chaat.jpg" alt="samosa-chaat" loading="lazy" class="h-48 w-full object-cover"><?php else: ?><div class="h-48 w-full" style="background:#FFE3A6"><svg viewBox="0 0 320 192" class="h-full w-full" role="img" aria-label="Samosa Chaat" preserveAspectRatio="xMidYMid slice"><circle cx="160" cy="100" r="84" fill="rgba(0,0,0,.14)"/><circle cx="160" cy="96" r="82" fill="#fff"/><circle cx="160" cy="96" r="70" fill="#F0B429"/>
+<circle cx="160" cy="96" r="56" fill="#F7C948"/><path d="M118 96q21-30 42 0t42 0" stroke="#E4A11B" stroke-width="6" fill="none"/>
+<ellipse cx="135" cy="74" rx="15" ry="4" fill="#C62828" transform="rotate(-30 135 74)"/>
+<ellipse cx="188" cy="116" rx="15" ry="4" fill="#C62828" transform="rotate(25 188 116)"/>
+<g fill="#5D3A1A"><circle cx="150" cy="112" r="2"/><circle cx="178" cy="78" r="2"/><circle cx="196" cy="94" r="2"/><circle cx="128" cy="100" r="2"/></g><circle cx="160" cy="90" r="5" fill="#3E9B4F"/><circle cx="172" cy="82" r="5" fill="#3E9B4F"/><circle cx="148" cy="104" r="5" fill="#3E9B4F"/></svg></div><?php endif; ?><div class="p-6">      <div class="flex items-center justify-between"><i class="vm"></i><b class="font-display text-xl">₹149</b></div>
+      <h3 class="mt-4 font-display text-2xl font-black">Samosa Chaat</h3><p class="mt-1 text-spin/70">Crispy Samosa,curd, sweet and sour chutney,chhole with onion and spices.</p></div></article>
+    <article class="rounded-3xl bg-white overflow-hidden shadow-sm ring-1 ring-spin/10">
+<?php if (is_file(__DIR__.'images/paneer-butter-masala.jpg')): ?><img src="images/paneer-butter-masala.jpg" alt="Paneer Butter Masala" loading="lazy" class="h-48 w-full object-cover"><?php else: ?><div class="h-48 w-full" style="background:#FFD2BE"><svg viewBox="0 0 320 192" class="h-full w-full" role="img" aria-label="Paneer Butter Masala" preserveAspectRatio="xMidYMid slice"><circle cx="160" cy="100" r="84" fill="rgba(0,0,0,.14)"/><circle cx="160" cy="96" r="82" fill="#fff"/><circle cx="160" cy="96" r="70" fill="#E4672B"/>
+<circle cx="160" cy="96" r="56" fill="#EE7A3A"/>
+<g fill="#FFF3D1"><rect x="130" y="76" width="24" height="24" rx="6" transform="rotate(-12 142 88)"/>
+<rect x="164" y="70" width="24" height="24" rx="6" transform="rotate(14 176 82)"/>
+<rect x="150" y="104" width="24" height="24" rx="6" transform="rotate(6 162 116)"/>
+<rect x="183" y="100" width="22" height="22" rx="6" transform="rotate(-18 194 111)"/></g>
+<path d="M118 100q22 24 44 0t40-6" stroke="#fff" stroke-width="5" fill="none" opacity=".85"/><circle cx="144" cy="70" r="5" fill="#3E9B4F"/><circle cx="200" cy="84" r="5" fill="#3E9B4F"/><circle cx="134" cy="112" r="5" fill="#3E9B4F"/></svg></div><?php endif; ?><div class="p-6">      <div class="flex items-center justify-between"><i class="vm"></i><b class="font-display text-xl">₹229</b></div>
+      <h3 class="mt-4 font-display text-2xl font-black">Paneer Butter Masala</h3><p class="mt-1 text-spin/70">Soft paneer in a tomato-cashew gravy.</p></div></article>
+    <article class="rounded-3xl bg-spin overflow-hidden text-milk">
+<?php if (is_file(__DIR__.'images/veg-thali.jpg')): ?><img src="images/veg-thali.jpg" alt="Veg Thali" loading="lazy" class="h-48 w-full object-cover"><?php else: ?><div class="h-48 w-full" style="background:#1F5236"><svg viewBox="0 0 320 192" class="h-full w-full" role="img" aria-label="Veg Thali" preserveAspectRatio="xMidYMid slice"><circle cx="160" cy="100" r="90" fill="rgba(0,0,0,.14)"/><circle cx="160" cy="96" r="88" fill="#CFD5DA"/><circle cx="160" cy="96" r="78" fill="#E9EDF0"/>
+<g stroke="#B8C0C6" stroke-width="2"><circle cx="116" cy="64" r="22" fill="#fff"/><circle cx="204" cy="64" r="22" fill="#fff"/>
+<circle cx="116" cy="130" r="22" fill="#fff"/><circle cx="204" cy="130" r="22" fill="#fff"/></g>
+<circle cx="116" cy="64" r="17" fill="#F0B429"/><circle cx="204" cy="64" r="17" fill="#3E9B4F"/>
+<circle cx="116" cy="130" r="17" fill="#D9531E"/><circle cx="204" cy="130" r="17" fill="#FFFDF4"/>
+<circle cx="160" cy="97" r="23" fill="#FFFDF4" stroke="#E2E2E2" stroke-width="2"/>
+<circle cx="160" cy="50" r="14" fill="#E3A857"/><circle cx="160" cy="144" r="14" fill="#E3A857"/>
+<circle cx="160" cy="97" r="4" fill="#E4C26A"/></svg></div><?php endif; ?><div class="p-6">      <div class="flex items-center justify-between"><i class="vm" style="background:#FFFBF2"></i><b class="font-display text-xl text-saffron">₹249</b></div>
+      <h3 class="mt-4 font-display text-2xl font-black">Veg Thali</h3><p class="mt-1 text-milk/80">Two sabzis, dal, rice, roti, salad and a sweet. Our best seller.</p></div></article>
+    <article class="rounded-3xl bg-white overflow-hidden shadow-sm ring-1 ring-spin/10">
+<?php if (is_file(__DIR__.'images/chhole-bhature.jpg')): ?><img src="images/chole-bhature.jpg" alt="Chole Bhature" loading="lazy" class="h-48 w-full object-cover"><?php else: ?><div class="h-48 w-full" style="background:#F6D9C0"><svg viewBox="0 0 320 192" class="h-full w-full" role="img" aria-label="Chole Bhature" preserveAspectRatio="xMidYMid slice"><circle cx="160" cy="100" r="86" fill="rgba(0,0,0,.14)"/><circle cx="160" cy="96" r="84" fill="#fff"/>
+<ellipse cx="124" cy="98" rx="48" ry="42" fill="#E8AE55"/><ellipse cx="118" cy="88" rx="30" ry="22" fill="#F2C679"/>
+<g fill="#C98A3C"><circle cx="100" cy="112" r="4"/><circle cx="140" cy="118" r="3"/><circle cx="148" cy="84" r="3"/></g>
+<circle cx="208" cy="100" r="38" fill="#F0F0F0"/><circle cx="208" cy="100" r="32" fill="#8B4A1F"/>
+<g fill="#D19A55"><circle cx="196" cy="90" r="6"/><circle cx="214" cy="86" r="6"/><circle cx="222" cy="104" r="6"/><circle cx="202" cy="108" r="6"/><circle cx="190" cy="104" r="5"/></g>
+<circle cx="214" cy="70" r="9" fill="none" stroke="#B34C8A" stroke-width="3"/><circle cx="208" cy="98" r="5" fill="#3E9B4F"/></svg></div><?php endif; ?><div class="p-6">      <div class="flex items-center justify-between"><i class="vm"></i><b class="font-display text-xl">₹179</b></div>
+      <h3 class="mt-4 font-display text-2xl font-black">Chole Bhature</h3><p class="mt-1 text-spin/70">Spiced chickpeas with fluffy bhature.</p></div></article>
+    <article class="rounded-3xl bg-white overflow-hidden shadow-sm ring-1 ring-spin/10">
+<?php if (is_file(__DIR__.'images/aloo-paratha.jpg')): ?><img src="images/aloo-paratha.jpg" alt="Aloo Paratha" loading="lazy" class="h-48 w-full object-cover"><?php else: ?><div class="h-48 w-full" style="background:#D8EBC8"><svg viewBox="0 0 320 192" class="h-full w-full" role="img" aria-label="Aloo Paratha" preserveAspectRatio="xMidYMid slice"><circle cx="160" cy="100" r="90" fill="rgba(0,0,0,.14)"/><circle cx="160" cy="96" r="88" fill="#fff"/>
+<circle cx="140" cy="98" r="55" fill="#E0A458"/><circle cx="140" cy="98" r="47" fill="#E8B26A"/>
+<g fill="#A8641F"><circle cx="118" cy="82" r="4"/><circle cx="150" cy="70" r="4"/><circle cx="165" cy="102" r="4"/><circle cx="128" cy="116" r="4"/><circle cx="108" cy="104" r="3"/><circle cx="154" cy="128" r="3"/></g>
+<rect x="128" y="86" width="26" height="18" rx="3" fill="#FFE27A" transform="rotate(-8 141 95)"/>
+<circle cx="228" cy="126" r="22" fill="#F0F0F0"/><circle cx="228" cy="126" r="17" fill="#FFFDF4"/>
+<circle cx="224" cy="64" r="13" fill="#F0F0F0"/><circle cx="224" cy="64" r="9" fill="#C62828"/><circle cx="228" cy="124" r="5" fill="#3E9B4F"/></svg></div><?php endif; ?><div class="p-6">      <div class="flex items-center justify-between"><i class="vm"></i><b class="font-display text-xl">₹99</b></div>
+      <h3 class="mt-4 font-display text-2xl font-black">Aloo Paratha</h3><p class="mt-1 text-spin/70">Stuffed whole wheat with curd and pickle.</p></div></article>
+    <article class="rounded-3xl bg-saffron overflow-hidden">
+<?php if (is_file(__DIR__.'images/besan-laado.jpg')): ?><img src="images/besan-laado.jpg" alt="Besan Laado" loading="lazy" class="h-48 w-full object-cover"><?php else: ?><div class="h-48 w-full" style="background:#FFD27A"><svg viewBox="0 0 320 192" class="h-full w-full" role="img" aria-label="Besan Laado" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="lg" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFE08A"/><stop offset=".55" stop-color="#F4A91B"/><stop offset="1" stop-color="#C77700"/></radialGradient></defs><circle cx="160" cy="100" r="86" fill="rgba(0,0,0,.14)"/>
+<circle cx="160" cy="96" r="84" fill="#fff"/>
+<g fill="url(#lg)"><circle cx="136" cy="70" r="25"/><circle cx="184" cy="70" r="25"/><circle cx="112" cy="114" r="25"/><circle cx="160" cy="114" r="25"/><circle cx="208" cy="114" r="25"/></g>
+<g fill="#4CAF50"><rect x="130" y="58" width="6" height="3" rx="1"/><rect x="190" y="62" width="6" height="3" rx="1"/><rect x="104" y="104" width="6" height="3" rx="1"/><rect x="164" y="106" width="6" height="3" rx="1"/><rect x="212" y="108" width="6" height="3" rx="1"/></g></svg></div><?php endif; ?><div class="p-6">      <div class="flex items-center justify-between"><i class="vm" style="border-color:#12301F"></i><b class="font-display text-xl">₹40 each</b></div>
+      <h3 class="mt-4 font-display text-2xl font-black">Besan Laado</h3><p class="mt-1">Our namesake. Roasted gram flour and ghee.</p></div></article>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="bg-beet px-6 py-20 text-milk md:px-12">
+  <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
+    <h2 class="font-display text-5xl font-black leading-tight md:text-6xl">One family recipe, now a whole kitchen.</h2>
+    <div class="space-y-4 text-lg text-milk/90">
+      <p>LAADO began with a grandmother's besan laado. People kept asking for more, so we added Plain Rice-dal-Vegetables, paneer,fresh rotis,parathas,veg-biryani and snacks with sweets.</p>
+      <p>We use seasonal vegetables, whole spices and pure ghee. No artificial colours, no shortcuts. We also cater for parties, pujas and office lunches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[1fr_1.3fr] md:px-12">
+  <div>
+    <h2 class="font-display text-5xl font-black md:text-6xl">Say hello</h2>
+    <p class="mt-4 max-w-sm text-spin/80">Want to order, plan a party or share feedback? Write to us. We reply within one working day.</p>
+    <dl class="mt-8 space-y-3">
+      <div><dt class="font-semibold">Phone</dt><dd>+91 00000 00000</dd></div>
+      <div><dt class="font-semibold">Email</dt><dd>hello@laadokitchen.com</dd></div>
+      <div><dt class="font-semibold">Hours</dt><dd>10 am to 10 pm, every day</dd></div>
+    </dl>
+  </div>
+
+  <form id="contactForm" action="contact.php" method="post" novalidate class="grid gap-4 rounded-3xl bg-spin p-6 text-milk md:p-8">
+    <?php session_start(); $f = $_SESSION['flash'] ?? null; unset($_SESSION['flash']);
+if ($f): ?>
+    <div role="status" class="rounded-xl px-4 py-3 font-semibold <?= $f['ok'] ? 'bg-green-100 text-green-900' : 'bg-red-100 text-red-900' ?>">
+      <?= htmlspecialchars($f['msg']) ?>
+      <?php foreach (($f['errors'] ?? []) as $e): ?><div class="font-normal"><?= htmlspecialchars($e) ?></div><?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <label class="grid gap-1 text-sm font-semibold">Name
+        <input name="name" required autocomplete="name" class="rounded-xl border-2 border-transparent bg-milk px-4 py-3 text-base font-normal text-spin focus:border-saffron focus:outline-none"></label>
+      <label class="grid gap-1 text-sm font-semibold">Email
+        <input name="email" type="email" required autocomplete="email" class="rounded-xl border-2 border-transparent bg-milk px-4 py-3 text-base font-normal text-spin focus:border-saffron focus:outline-none"></label>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <label class="grid gap-1 text-sm font-semibold">Phone (optional)
+        <input name="phone" type="tel" autocomplete="tel" class="rounded-xl border-2 border-transparent bg-milk px-4 py-3 text-base font-normal text-spin focus:border-saffron focus:outline-none"></label>
+      <label class="grid gap-1 text-sm font-semibold">I'm writing about
+        <select name="topic" class="rounded-xl border-2 border-transparent bg-milk px-4 py-3 text-base font-normal text-spin focus:border-saffron focus:outline-none">
+          <option>Placing an order</option><option>Catering or party</option><option>Feedback</option><option>Something else</option></select></label>
+    </div>
+    <label class="grid gap-1 text-sm font-semibold">Message
+      <textarea name="message" rows="5" required class="rounded-xl border-2 border-transparent bg-milk px-4 py-3 text-base font-normal text-spin focus:border-saffron focus:outline-none"></textarea></label>
+    <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute -left-[9999px]">
+    <button class="justify-self-start rounded-full bg-saffron px-8 py-3 font-semibold text-spin transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-milk">Send message</button>
+  </form>
+</section>
+</main>
+
+<footer class="bg-spin px-6 py-8 text-center text-sm text-milk/80" style="padding-bottom:calc(2rem + env(safe-area-inset-bottom,0px))">
+  &copy; <?= date("Y") ?> LAADO Kitchen. Pure vegetarian.
+</footer>
+
+</body>
+</html>
